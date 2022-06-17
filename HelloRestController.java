@@ -35,5 +35,12 @@ public  class HelloRestController {
                 return "Hello" + user.getFirstName() + user.getLastName() + "!";
         }
 
+        //curl -X PUT
+        //localhost:8080/hello/put/Padmaja/?lastName=pawar -w "\n"
+        @PutMapping("/put/{firstName}")
+        public String sayhello(@PathVariable String firstName,
+                               @RequestParam(value = "lastName") String lastName) {
+                return "Hello" + firstName + lastName + "From Bridgelabz!";
+        }
 
 }
